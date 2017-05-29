@@ -25,14 +25,14 @@ public class Destruible : GameObject{
 			OnCollisionEnter(Atacante,this){
 				this.life-=Atacante.daño;
 				if(this.life<=0){
-						spirite=Istantiate(SpiriteType,this.position,this.rotation);
+						spirite=Instantiate(SpiriteType,this.position,this.rotation);
 						spirite.color=cl;
 						spirite.energy=20;
 						spirite.size=numChunk*2;
 					}
 					OnDeltaTime(3){
 					for(i=0;i<this.numChunk;i++){
-						chunk=Intantiate(this.TypeChunk,this.position,this.rotation);//luego se selecciona la textura del chunk
+						chunk=Instantiate(this.TypeChunk,this.position,this.rotation);//luego se selecciona la textura del chunk
 						chunk.AddForce(this.forward*200);/**le añadimos fuerza para q resulte mas realista*/
 						//NOTA: cambiar "forward" x otro parametro para q no resulte tan lineal
 					}//y el tipo de chunk en la pestaña del editor
